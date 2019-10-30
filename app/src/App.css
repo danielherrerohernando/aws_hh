@@ -1,33 +1,67 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700&display=swap");
+body {
+  margin: 0;
+  width: 100%;
+  height: calc(100vh + 1800px);
+  background: rgb(0, 0, 0);
+  color: rgb(0, 255, 221);
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+#scene {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cube-wrap {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  perspective: 99999px;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
-
-.App-link {
-  color: #61dafb;
+.layer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 1px;
+  box-shadow: inset 0 0 0 1px rgb(0, 255, 213), 0 0 rgb(0, 255, 255);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.layer.face {
+  transform: translate3d(0px, 0px, 150px);
+  transform-style: preserve-3d;
+  position: relative;
+}
+.layer.back {
+  transform: translate3d(0px, 0px, -150px);
+  transform-style: preserve-3d;
+}
+.layer.left {
+  transform: rotateY(-90deg) translate3d(0px, 0px, 150px);
+  transform-style: preserve-3d;
+}
+.layer.right {
+  transform: rotateY(90deg) translate3d(0px, 0px, 150px);
+  transform-style: preserve-3d;
+}
+.layer.top {
+  transform: rotateX(90deg) translate3d(0px, 0px, 150px);
+  transform-style: preserve-3d;
+}
+.layer.bottom {
+  transform: rotateX(-90deg) translate3d(0px, 0px, 150px);
+  transform-style: preserve-3d;
+}
+.test {
+  position: absolute;
+  top: 155px;
+  left: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 120px;
+  margin: 0;
 }

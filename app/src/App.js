@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
+  let userDepth;
+  window.onscroll = e => {
+    userDepth = window.scrollY * 0.2;
+    document.querySelector(".cube-wrap").style.transform = `rotateX(${userDepth}deg) rotateY(${userDepth}deg)`;
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="scene">
+      <div class="cube-wrap">
+        <div class="layer face"></div>
+        <div class="layer back">
+          <h1 class="test">Hh</h1>
+        </div>
+        <div class="layer left"></div>
+        <div class="layer right"></div>
+        <div class="layer top"></div>
+        <div class="layer bottom"></div>
+      </div>
     </div>
   );
 }
